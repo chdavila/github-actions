@@ -5,7 +5,7 @@ jobs:
   hola-mundo:
     runs-on: ubuntu-latest
     steps:
-      - name:
+      - name: Get IP
         id: ip
         uses: haythem/public-ip@v1.3
       - name: Hola mundo 
