@@ -1,0 +1,28 @@
+name: Triggers
+run-name: ¡Usnado Triggers!
+on:
+  workflow_dispatch:
+    inputs:
+      edad:
+        description: 'Edad'
+        required: true
+        type: number
+      nombre:
+        description: 'Nombre'
+        required: true
+        default: 'Camilo'
+        type: string
+jobs:
+  mayor:
+    if: ${{inputs.edad >= 18}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script
+        run: echo ${{inputs.edad}} es mayor de edad
+  menor:
+    if: ${{inputs.edad < 18}}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Correr script menor
+        run: echo ${{inputs.edad}} es menor de edad
+
