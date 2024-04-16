@@ -4,15 +4,15 @@ on: [push]
 jobs:
   hola-mundo:
     runs-on: ubuntu-latest
-      steps:
-        - name:
-          id: ip
-          uses: haythem/public-ip@v1.3
-        - name: Hola mundo 
-          run: echo ¡Hola Mundo desde ${{steps.ip.outputs.ipv4}}
-        - uses: actions/checkout@v3
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 18
-        - name: Run index
-          run: node index.js
+    steps:
+      - name:
+        id: ip
+        uses: haythem/public-ip@v1.3
+      - name: Hola mundo 
+        run: echo ¡Hola Mundo desde ${{steps.ip.outputs.ipv4}}
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+      - name: Run index
+        run: node index.js
